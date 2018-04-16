@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import static br.usjt.desmob.paises.PaisContract.PaisEntry.*;
+
 /**
  * Created by Alessandro Henrique on 15/4/2018.
  * RA 816117880
@@ -13,23 +15,28 @@ public class PaisDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Paises.db";
     public static final String SQL_CREATE_PAIS =
-            "CREATE TABLE " + PaisContract.PaisEntry.TABLE_NAME + "(" +
-                    PaisContract.PaisEntry._ID + " INTEGER PRIMARY KEY,"+
-                    PaisContract.PaisEntry.COLUMN_NAME_NOME + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_REGIAO + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_CAPITAL + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_BANDEIRA + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_SUBREGIAO + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_LONGITUDE + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_LATITUDE + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_DEMONIMO + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_AREA + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_POPULACAO + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_GINI + " TEXT," +
-                    PaisContract.PaisEntry.COLUMN_NAME_CODIGO3 + " TEXT)";
+            "CREATE TABLE " + TABLE_NAME + "(" +
+                    _ID + " INTEGER PRIMARY KEY,"+
+                    COLUMN_NAME_NOME + " TEXT," +
+                    COLUMN_NAME_REGIAO + " TEXT," +
+                    COLUMN_NAME_CAPITAL + " TEXT," +
+                    COLUMN_NAME_BANDEIRA + " TEXT," +
+                    COLUMN_NAME_SUBREGIAO + " TEXT," +
+                    COLUMN_NAME_LONGITUDE + " DOUBLE," +
+                    COLUMN_NAME_LATITUDE + " DOUBLE," +
+                    COLUMN_NAME_DEMONIMO + " TEXT," +
+                    COLUMN_NAME_AREA + " INT," +
+                    COLUMN_NAME_POPULACAO + " INT," +
+                    COLUMN_NAME_GINI + " DOUBLE," +
+                    COLUMN_NAME_FRONTEIRAS + " TEXT," +
+                    COLUMN_NAME_FUSOS + " TEXT," +
+                    COLUMN_NAME_DOMINIOS + " TEXT," +
+                    COLUMN_NAME_MOEDAS + " TEXT," +
+                    COLUMN_NAME_IDIOMAS + " TEXT," +
+                    COLUMN_NAME_CODIGO3 + " TEXT)";
 
     public static final String SQL_DROP_PAIS =
-            "DROP TABLE IF EXISTS " + PaisContract.PaisEntry.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     public PaisDbHelper(Context contexto){
         super(contexto, DATABASE_NAME, null, DATABASE_VERSION);

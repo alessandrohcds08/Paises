@@ -74,6 +74,63 @@ public class PaisDataNetwork {
                     pais.setLongitude(0);
                 }
 
+                JSONArray languages = item.getJSONArray("languages");
+                ArrayList<String> idioma = new ArrayList<>();
+                try {
+                    for(int j = 0; j < languages.length(); j++){
+                        idioma.add(languages.getString(j));
+                    }
+                    pais.setIdiomas(idioma);
+                }catch (Exception e){
+                    pais.setIdiomas(null);
+                }
+
+                JSONArray currencies = item.getJSONArray("currencies");
+                ArrayList<String> moedas = new ArrayList<>();
+                try {
+                    for(int j = 0; j < currencies.length(); j++){
+                        moedas.add(currencies.getString(j));
+                    }
+                    pais.setMoedas(moedas);
+                }catch (Exception e){
+                    pais.setMoedas(null);
+                }
+
+                JSONArray timezones = item.getJSONArray("timezones");
+                ArrayList<String> fusos = new ArrayList<>();
+                try {
+                    for(int j = 0; j < timezones.length(); j++){
+                        fusos.add(timezones.getString(j));
+                    }
+                    pais.setFusos(fusos);
+                }catch (Exception e){
+                    pais.setFusos(null);
+                }
+
+                JSONArray borders = item.getJSONArray("borders");
+                ArrayList<String> fronteiras = new ArrayList<>();
+                try {
+                    for(int j = 0; j < borders.length(); j++){
+                        fronteiras.add(borders.getString(j));
+                    }
+                    pais.setFronteiras(fronteiras);
+                }catch (Exception e){
+                    pais.setFronteiras(null);
+                }
+
+                JSONArray regionalBlocs = item.getJSONArray("regionalBlocs");
+                ArrayList<String> dominios = new ArrayList<>();
+                try {
+                    for(int j = 0; j < regionalBlocs.length(); j++){
+                        dominios.add(regionalBlocs.getString(j));
+                    }
+                    pais.setDominios(dominios);
+                }catch (Exception e){
+                    pais.setDominios(null);
+                }
+
+
+
                 paises.add(pais);
             }
         } catch (JSONException e) {

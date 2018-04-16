@@ -17,11 +17,17 @@ public class PaisContract {
         public static final String COLUMN_NAME_CODIGO3 = "codigo3";
         public static final String COLUMN_NAME_SUBREGIAO = "subregiao";
         public static final String COLUMN_NAME_DEMONIMO = "demonimo";
-        public static final int COLUMN_NAME_POPULACAO = Integer.parseInt( "populacao" );
-        public static final int COLUMN_NAME_AREA = Integer.parseInt( "area" );
-        public static final double COLUMN_NAME_GINI = Double.parseDouble( "gini" );
-        public static final double COLUMN_NAME_LONGITUDE = Double.parseDouble("longitude");
-        public static final double COLUMN_NAME_LATITUDE = Double.parseDouble("latitude");
+        public static final String COLUMN_NAME_POPULACAO = ( "populacao" );
+        public static final String COLUMN_NAME_AREA = ( "area" );
+        public static final String COLUMN_NAME_GINI = ( "gini" );
+        public static final String COLUMN_NAME_LONGITUDE = ("longitude");
+        public static final String COLUMN_NAME_LATITUDE = ("latitude");
+        public static final String COLUMN_NAME_IDIOMAS = ( "idiomas" );
+        public static final String COLUMN_NAME_FRONTEIRAS = ( "fronteiras" );
+        public static final String COLUMN_NAME_DOMINIOS = ( "dominios" );
+        public static final String COLUMN_NAME_MOEDAS = ("moedas");
+        public static final String COLUMN_NAME_FUSOS = ("fusos");
+
 
 
     }
