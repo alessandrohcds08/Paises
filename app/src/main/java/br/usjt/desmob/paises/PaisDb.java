@@ -92,12 +92,27 @@ public class PaisDb {
             pais.setSubRegiao(c.getString(c.getColumnIndex( COLUMN_NAME_SUBREGIAO)));
             pais.setPopulacao(c.getInt(c.getColumnIndex( COLUMN_NAME_POPULACAO ) ));
             pais.setDemonimo(c.getString(c.getColumnIndex( COLUMN_NAME_DEMONIMO)));
-            /* pais.setMoedas(c.getString(c.getColumnIndex( COLUMN_NAME_MOEDAS ) ));
-           pais.setFronteiras(c.getString(c.getColumnIndex( COLUMN_NAME_FRONTEIRAS ) ));
-            pais.setFusos(c.getString(c.getColumnIndex( COLUMN_NAME_FUSOS)));
-            pais.setDominios(c.getString(c.getColumnIndex( COLUMN_NAME_DOMINIOS ) ));
-            pais.setIdiomas(c.getString(c.getColumnIndex( COLUMN_NAME_IDIOMAS)));*/
             pais.setArea(c.getInt(c.getColumnIndex( COLUMN_NAME_AREA ) ));
+
+            ArrayList<String> moedas = new ArrayList<>();
+            moedas.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_MOEDAS)))));
+            pais.setMoedas(moedas);
+
+            ArrayList<String> fronteiras = new ArrayList<>();
+            fronteiras.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_FRONTEIRAS)))));
+            pais.setFronteiras(fronteiras);
+
+            ArrayList<String> fusos = new ArrayList<>();
+            fusos.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_FUSOS)))));
+            pais.setFusos(fusos);
+
+            ArrayList<String> dominios = new ArrayList<>();
+            dominios.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_DOMINIOS)))));
+            pais.setDominios(dominios);
+
+            ArrayList<String> idiomas = new ArrayList<>();
+            idiomas.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_IDIOMAS)))));
+            pais.setIdiomas(idiomas);
 
             paises.add(pais);
         }
